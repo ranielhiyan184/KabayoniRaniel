@@ -14,7 +14,7 @@ module.exports = {
 
 	langs: {
 		vi: {
-			title: "====== Nhật ký bot ======",
+			title: "====== RanielBigdck bot ======",
 			added: "\n✅\nSự kiện: bot được thêm vào nhóm mới\n- Người thêm: %1",
 			kicked: "\n❌\nSự kiện: bot bị kick\n- Người kick: %1",
 			footer: "\n- User ID: %1\n- Nhóm: %2\n- ID nhóm: %3\n- Thời gian: %4"

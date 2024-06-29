@@ -35,7 +35,9 @@ module.exports = {
       processMemory: prettyBytes(process.memoryUsage().rss)
     };
 
-    const response = `★ 𝐒𝐲𝐬𝐭𝐞𝐦 𝐎𝐯𝐞𝐫𝐯𝐢𝐞𝐰 ★\n`
+    const response = `admin this bot - ${admin}\n`
+    +'-------------------------------------\n'
+     `★ 𝐒𝐲𝐬𝐭𝐞𝐦 𝐎𝐯𝐞𝐫𝐯𝐢𝐞𝐰 ★\n`
       + '-------------------------------------\n'
       + '⚙  𝐒𝐲𝐬𝐭𝐞𝐦 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:\n'
       + `  𝐎𝐒: ${systemInfo.os}\n`
