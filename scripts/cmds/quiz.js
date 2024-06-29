@@ -62,3 +62,5 @@ function revealAnswer(api, threadID) {
     const { correctIndex, options } = triviaData[threadID];
     const correctLetter = String.fromCharCode(65 + correctIndex);
     api.sendMessage(`Time's up! The correct answer is:\n\n${correctLetter}. ${decodeURIComponent(options[correctIndex])}`, threadID);
+  }
+}
