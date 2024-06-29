@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0",
   hasPermission: 0,
   credits: "Raniel",
-  usePrefix: true,
+  usePrefix: false,
   description: "Answer trivia questions",
   commandCategory: "Fun",
   cooldowns: 5,
