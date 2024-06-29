@@ -42,12 +42,7 @@ animagine: {
   lyrics: {
     name: "lyrics",
     description: "Fetches lyrics of a song",
-    guide: `${prefix}lyrics perfect by ed sheeran"`
-  },
-  quiz: {
-    name: "quiz",
-    description: "try to answer the question",
-    guide: `${prefix}quiz hard general knowledge`
+    guide: "-lyrics perfect by ed sheeran"
   },
   help: {
     name: "help",
@@ -62,7 +57,7 @@ animagine: {
   uptime: {
     name: "uptime",
     description: "See how long the bot has been running.",
-    guide: `${prefix}uptime`
+    guide: "-uptime"
   },
   unsend: {
     name: "unsend",
@@ -94,10 +89,10 @@ module.exports = {
       const commandsList = `━━━━━━━━━━━━━━━━
 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:
 ╭─╼━━━━━━━━╾─╮
-│ ${prefix} AI
-│ ${prefix} Translate
-│ ${prefix} Animagine
-│ ${prefix} Dalle
+│ [ ${prefix} AI
+│ [ ${prefix} Translate 
+│ [ ${prefix} Animagine 
+│ - Dalle
 │ - Pinterest
 │ - Remini
 │ - Lyrics
@@ -107,6 +102,7 @@ module.exports = {
 │ - Tempmail
 │ - Unsend
 │ - Uptime
+| - Quiz
 ╰─━━━━━━━━━╾─╯
 -𝚑𝚎𝚕𝚙 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚗𝚊𝚖𝚎>
 𝚃𝚘 𝚜𝚎𝚎 𝚑𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎
