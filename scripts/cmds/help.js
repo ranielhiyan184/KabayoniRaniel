@@ -89,9 +89,9 @@ module.exports = {
       const commandsList = `━━━━━━━━━━━━━━━━
 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:
 ╭─╼━━━━━━━━╾─╮
-│  {prefix} AI
-│  {prefix} Translate 
-│  {prefix} Animagine 
+│ - AI
+│ - Translate 
+│ - Animagine 
 │ - Dalle
 │ - Pinterest
 │ - Remini
@@ -102,7 +102,6 @@ module.exports = {
 │ - Tempmail
 │ - Unsend
 │ - Uptime
-| - Quiz
 ╰─━━━━━━━━━╾─╯
 -𝚑𝚎𝚕𝚙 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚗𝚊𝚖𝚎>
 𝚃𝚘 𝚜𝚎𝚎 𝚑𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎
