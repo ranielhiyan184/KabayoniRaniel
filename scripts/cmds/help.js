@@ -89,9 +89,9 @@ module.exports = {
       const commandsList = `━━━━━━━━━━━━━━━━
 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:
 ╭─╼━━━━━━━━╾─╮
-│ [ ${prefix} AI
-│ [ ${prefix} Translate 
-│ [ ${prefix} Animagine 
+│  {prefix} AI
+│  {prefix} Translate 
+│  {prefix} Animagine 
 │ - Dalle
 │ - Pinterest
 │ - Remini
