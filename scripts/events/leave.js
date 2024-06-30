@@ -18,15 +18,21 @@ module.exports = {
 			leaveType2: "bị kick",
 			defaultLeaveMessage: "{userName} đã {type} khỏi nhóm"
 		},
-		en: {
-			session1: "morning",
-			session2: "noon",
-			session3: "afternoon",
-			session4: "evening",
 		
-			leaveType2: "was kicked",
-			defaultLeaveMessage: "gi kicked ka kay way gamit.\n\n-admin sa pm"
-		}
+en: {
+    session1: "morning",
+    session2: "noon",
+    session3: "afternoon",
+    session4: "evening",
+	
+    leavetype1: {
+        kick: "You were kicked",
+        leave: "User left"
+    },
+    leavemessage1: "Sample kick message.", 
+    leavemessage2: "Sample leave message."
+}
+
 	},
 
 	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
