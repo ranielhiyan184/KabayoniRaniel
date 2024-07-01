@@ -26,7 +26,7 @@ module.exports = {
 			session4: "evening",
 			leaveType1: "left",
 			leaveType2: "was kicked",
-			defaultLeaveMessage: "{type}²pas {userName} rag portanti. ",
+			defaultLeaveMessage: "{type}² pas {userName} rag portanti. ",
 			kickMessage: "{userName} was kicked from the group kay way gamit.\n\n-admin sa pm" // New kick message
 		}
 	},
