@@ -6,7 +6,7 @@ module.exports.config = {
   name: 'ai',
   version: '1.0.0',
   role: 0,
-  hasPrefix: false,
+  hasPrefix: true,
   description: "An AI command powered by Hercai",
   usage: "Ai [prompt]",
   credits: 'Developer',
