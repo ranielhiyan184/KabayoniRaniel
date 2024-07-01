@@ -26,7 +26,7 @@ module.exports = {
 			session4: "evening",
 			leaveType1: "left",
 			leaveType2: "was kicked",
-			defaultLeaveMessage: "{userName} {type}² rag portanti. ",
+			defaultLeaveMessage: "{userName} {type} from the group. ",
 			kickMessage: "{userName} was kicked from the group kay way gamit. " // New kick message
 		}
 	},
@@ -50,6 +50,14 @@ module.exports = {
 
 				let { leaveMessage = getLang("defaultLeaveMessage") } = threadData.data; 
 
+				// Declare 'form' here
+				const form = {
+					mentions: leaveMessage.match(/\{userNameTag\}/g) ? [{
+						tag: userName,
+						id: leftParticipantFbId
+					}] : null
+				};
+
 				if (leftParticipantFbId == event.author) { 
 					// User left on their own
 					leaveMessage = leaveMessage
@@ -65,6 +73,26 @@ module.exports = {
 
 				// ... (rest of the code)
 
+				// Now 'form' is available here 
+				form.body = leaveMessage;
+
+				if (leaveMessage.includes("{userNameTag}")) {
+					form.mentions = [{
+						id: leftParticipantFbId,
+						tag: userName
+					}];
+				}
+
+				if (threadData.data.leaveAttachment) {
+					const files = threadData.data.leaveAttachment;
+					const attachments = files.reduce((acc, file) => {
+						acc.push(drive.getFile(file, "stream"));
+						return acc;
+					}, []);
+					form.attachment = (await Promise.allSettled(attachments))
+						.filter(({ status }) => status == "fulfilled")
+						.map(({ value }) => value);
+				}
 				message.send(form);
 			};
 	}
