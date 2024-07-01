@@ -29,7 +29,7 @@ module.exports = {
 			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
 			multiple1: "to",
 			multiple2: "to",
-			defaultWelcomeMessage: `Hello animals {userName}.\nWelcome {multiple}  {boxName}\nbastag mo left libakon😊`
+			defaultWelcomeMessage: ` animals {userName}. Welcome {multiple}  {boxName}\n\nbastag mo left libakon naa rabay ranter diri😊`
 		}
 	},
 
