@@ -55,7 +55,7 @@ module.exports = {
 					mentions: leaveMessage.match(/\{userNameTag\}/g) ? [{
 						tag: userName,
 						id: leftParticipantFbId
-					}];
+					}]: null
 				};
 
 				if (leftParticipantFbId == event.author) { 
