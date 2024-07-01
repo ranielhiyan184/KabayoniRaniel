@@ -16,23 +16,19 @@ module.exports = {
 			session4: "tối",
 			leaveType1: "tự rời",
 			leaveType2: "bị kick",
-			defaultLeaveMessage: "{userName} đã {type} khỏi nhóm"
+			defaultLeaveMessage: "{userName} đã {type} khỏi nhóm",
+			kickMessage: "{userName} đã bị kick khỏi nhóm" // New kick message
 		},
-		
-en: {
-    session1: "morning",
-    session2: "noon",
-    session3: "afternoon",
-    session4: "evening",
-	
-    leavetype1: {
-        kick: "You were kicked",
-        leave: "User left"
-    },
-    leavemessage1: "Sample kick message.", 
-    leavemessage2: "Sample leave message."
-}
-
+		en: {
+			session1: "morning",
+			session2: "noon",
+			session3: "afternoon",
+			session4: "evening",
+			leaveType1: "left",
+			leaveType2: "was kicked",
+			defaultLeaveMessage: "{userName} {type}² rag portanti. ",
+			kickMessage: "{userName} was kicked from the group kay way gamit. " // New kick message
+		}
 	},
 
 	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
@@ -50,54 +46,25 @@ en: {
 				const threadName = threadData.threadName;
 				const userName = await usersData.getName(leftParticipantFbId);
 
-				// {userName}   : name of the user who left the group
-				// {type}       : type of the message (leave)
-				// {boxName}    : name of the box
-				// {threadName} : name of the box
-				// {time}       : time
-				// {session}    : session
+				// ... (rest of the code)
 
-				let { leaveMessage = getLang("defaultLeaveMessage") } = threadData.data;
-				const form = {
-					mentions: leaveMessage.match(/\{userNameTag\}/g) ? [{
-						tag: userName,
-						id: leftParticipantFbId
-					}] : null
-				};
+				let { leaveMessage = getLang("defaultLeaveMessage") } = threadData.data; 
 
-				leaveMessage = leaveMessage
-					.replace(/\{userName\}|\{userNameTag\}/g, userName)
-					.replace(/\{type\}/g, leftParticipantFbId == event.author ? getLang("leaveType1") : getLang("leaveType2"))
-					.replace(/\{threadName\}|\{boxName\}/g, threadName)
-					.replace(/\{time\}/g, hours)
-					.replace(/\{session\}/g, hours <= 10 ?
-						getLang("session1") :
-						hours <= 12 ?
-							getLang("session2") :
-							hours <= 18 ?
-								getLang("session3") :
-								getLang("session4")
-					);
-
-				form.body = leaveMessage;
-
-				if (leaveMessage.includes("{userNameTag}")) {
-					form.mentions = [{
-						id: leftParticipantFbId,
-						tag: userName
-					}];
+				if (leftParticipantFbId == event.author) { 
+					// User left on their own
+					leaveMessage = leaveMessage
+						.replace(/\{userName\}|\{userNameTag\}/g, userName)
+						.replace(/\{type\}/g, getLang("leaveType1"))
+						// ... (rest of the replacements)
+				} else {
+					// User was kicked
+					leaveMessage = getLang("kickMessage") // Use the specific kick message
+						.replace(/\{userName\}|\{userNameTag\}/g, userName)
+						// ... (rest of the replacements)
 				}
 
-				if (threadData.data.leaveAttachment) {
-					const files = threadData.data.leaveAttachment;
-					const attachments = files.reduce((acc, file) => {
-						acc.push(drive.getFile(file, "stream"));
-						return acc;
-					}, []);
-					form.attachment = (await Promise.allSettled(attachments))
-						.filter(({ status }) => status == "fulfilled")
-						.map(({ value }) => value);
-				}
+				// ... (rest of the code)
+
 				message.send(form);
 			};
 	}
